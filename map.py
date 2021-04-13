@@ -34,7 +34,6 @@ for lt, ln, loc, fav in zip(lat, lon, locale, favorite):
 map.add_child(cub_foods)
 
 
-
 fav_foods = folium.FeatureGroup(name = 'Favorite Eateries')
 
 fav_foods.add_child(folium.Marker(
@@ -45,7 +44,7 @@ fav_foods.add_child(folium.Marker(
 map.add_child(fav_foods)
 
 
-group = folium.FeatureGroup(name = 'Map')
+group = folium.FeatureGroup(name = 'Country Populations')
 
 group.add_child(folium.GeoJson(
     data = open('./assets/world.json', 'r', encoding = 'utf-8-sig').read(),
@@ -53,7 +52,12 @@ group.add_child(folium.GeoJson(
 
 map.add_child(group)
 
+
 #_________________
 ## END MARKERS ##
+
+
+map.add_child(folium.LayerControl())
+# adds control layers to toggle what the map shows
 
 map.save('map1.html')
