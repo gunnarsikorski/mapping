@@ -1,12 +1,32 @@
 import folium
+import pandas
 
 map = folium.Map(
     location = [44.986, -93.269],
     zoom_start = 10,
     tiles = 'Stamen Terrain')
 
+cub_data = pandas.read_csv('./assets/cub-locations.csv')
+lat = list(cub_data['Latitude'])
+lon = list(cub_data['Longitude'])
+locale = list(cub_data['Cub Location'])
+
+# Will use zip function on line 30 to merge the lat and lon variables in the loop
+
 #_________________
 ## MARKERS ##
+
+cub_foods = folium.FeatureGroup(name='Good Cub Locations')
+
+for lt, ln in zip(lat, lon):
+    cub_foods.add_child(folium.Marker(
+        location=[lt, ln],
+        popup='Cub Foods',
+        icon=folium.Icon(color='red')))
+
+map.add_child(cub_foods)
+
+
 
 fav_foods = folium.FeatureGroup(name = 'Favorite Eateries')
 
@@ -18,20 +38,7 @@ fav_foods.add_child(folium.Marker(
 map.add_child(fav_foods)
 
 
-cub_foods = folium.FeatureGroup(name = 'Good Cub Locations')
-
-cub_locations = [[44.97089515982077, -93.34941680718995],
-                 [45.00683148574318, -93.2321720985536],
-                 [44.882780266340134, -93.32040603725443]]
-
-for coords in cub_locations:
-    cub_foods.add_child(folium.Marker(
-        location = coords,
-        popup = 'Cub Foods',
-        icon = folium.Icon(color = 'red')))
-
-map.add_child(cub_foods)
-
 #_________________
+## END MARKERS ##
 
 map.save('map1.html')
