@@ -45,6 +45,14 @@ fav_foods.add_child(folium.Marker(
 map.add_child(fav_foods)
 
 
+group = folium.FeatureGroup(name = 'Map')
+
+group.add_child(folium.GeoJson(
+    data = open('./assets/world.json', 'r', encoding = 'utf-8-sig').read(),
+    style_function = lambda x: {'fillColor': 'blue' if x['properties']['POP2005'] < 10000000 else 'green'}))
+
+map.add_child(group)
+
 #_________________
 ## END MARKERS ##
 
