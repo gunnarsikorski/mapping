@@ -11,7 +11,7 @@ lat = list(cub_data['Latitude'])
 lon = list(cub_data['Longitude'])
 locale = list(cub_data['Cub Location'])
 
-# Will use zip function on line 30 to merge the lat and lon variables in the loop
+# Will use zip function on line 21 to merge the lat and lon variables in the loop
 
 #_________________
 ## MARKERS ##
