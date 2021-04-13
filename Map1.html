@@ -23,7 +23,7 @@
             <meta name="viewport" content="width=device-width,
                 initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
             <style>
-                #map_900751f65b2c487dbfbaf7da745e8a82 {
+                #map_10987555a1d94b0590d845eddb08cb20 {
                     position: relative;
                     width: 100.0%;
                     height: 100.0%;
@@ -35,13 +35,13 @@
 </head>
 <body>    
     
-            <div class="folium-map" id="map_900751f65b2c487dbfbaf7da745e8a82" ></div>
+            <div class="folium-map" id="map_10987555a1d94b0590d845eddb08cb20" ></div>
         
 </body>
 <script>    
     
-            var map_900751f65b2c487dbfbaf7da745e8a82 = L.map(
-                "map_900751f65b2c487dbfbaf7da745e8a82",
+            var map_10987555a1d94b0590d845eddb08cb20 = L.map(
+                "map_10987555a1d94b0590d845eddb08cb20",
                 {
                     center: [44.986, -93.269],
                     crs: L.CRS.EPSG3857,
@@ -55,9 +55,39 @@
 
         
     
-            var tile_layer_086637790d7d4a92bf63ab3256f59119 = L.tileLayer(
-                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
-                {"attribution": "Data by \u0026copy; \u003ca href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
-            ).addTo(map_900751f65b2c487dbfbaf7da745e8a82);
+            var tile_layer_d50b5796700b4ab386ae05a7c656b601 = L.tileLayer(
+                "https://stamen-tiles-{s}.a.ssl.fastly.net/terrain/{z}/{x}/{y}.jpg",
+                {"attribution": "Map tiles by \u003ca href=\"http://stamen.com\"\u003eStamen Design\u003c/a\u003e, under \u003ca href=\"http://creativecommons.org/licenses/by/3.0\"\u003eCC BY 3.0\u003c/a\u003e. Data by \u0026copy; \u003ca href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca href=\"http://creativecommons.org/licenses/by-sa/3.0\"\u003eCC BY SA\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_10987555a1d94b0590d845eddb08cb20);
         
+    
+            var feature_group_df4c075eb3434e3da92eba95903c791b = L.featureGroup(
+                {}
+            ).addTo(map_10987555a1d94b0590d845eddb08cb20);
+        
+    
+            var marker_f658f227365e4b2fb8cd5ca8ad0154d8 = L.marker(
+                [44.95286, -93.28779],
+                {}
+            ).addTo(feature_group_df4c075eb3434e3da92eba95903c791b);
+        
+    
+            var icon_0bd8027e52e7472da16cfec10af61fcf = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "purple", "prefix": "glyphicon"}
+            );
+            marker_f658f227365e4b2fb8cd5ca8ad0154d8.setIcon(icon_0bd8027e52e7472da16cfec10af61fcf);
+        
+    
+        var popup_6a609862e8b2472cabcf093a7a0934b1 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_c8154fef445547a4a7f839b6b79ed6bd = $(`<div id="html_c8154fef445547a4a7f839b6b79ed6bd" style="width: 100.0%; height: 100.0%;">Milkjam Creamery</div>`)[0];
+            popup_6a609862e8b2472cabcf093a7a0934b1.setContent(html_c8154fef445547a4a7f839b6b79ed6bd);
+        
+
+        marker_f658f227365e4b2fb8cd5ca8ad0154d8.bindPopup(popup_6a609862e8b2472cabcf093a7a0934b1)
+        ;
+
+        
+    
 </script>
