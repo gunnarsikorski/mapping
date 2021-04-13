@@ -18,11 +18,11 @@ locale = list(cub_data['Cub Location'])
 
 cub_foods = folium.FeatureGroup(name='Good Cub Locations')
 
-for lt, ln in zip(lat, lon):
+for lt, ln, loc in zip(lat, lon, locale):
     cub_foods.add_child(folium.Marker(
-        location=[lt, ln],
-        popup='Cub Foods',
-        icon=folium.Icon(color='red')))
+        location = [lt, ln],
+        popup = f'Cub Foods: {loc}',
+        icon = folium.Icon(color = 'red')))
 
 map.add_child(cub_foods)
 
@@ -33,7 +33,7 @@ fav_foods = folium.FeatureGroup(name = 'Favorite Eateries')
 fav_foods.add_child(folium.Marker(
     location = [44.95286, -93.28779],
     popup = 'Milkjam Creamery',
-    icon = folium.Icon(color='purple')))
+    icon = folium.Icon(color = 'purple')))
 
 map.add_child(fav_foods)
 
