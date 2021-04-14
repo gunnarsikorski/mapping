@@ -14,6 +14,13 @@ favorite = list(cub_data['Favorite'])
 
 # Will use zip function on line 21 to merge the lat and lon variables in the loop
 
+fav_data = pandas.read_csv('./assets/favorite-foods.csv')
+fav_lat = list(fav_data['Latitude'])
+fav_lon = list(fav_data['Longitude'])
+name = list(fav_data['Name'])
+rating = list(fav_data['Rating'])
+website = list(fav_data['Website'])
+
 def color_maker(fav):
     if fav == True:
         return 'green'
@@ -36,10 +43,11 @@ map.add_child(cub_foods)
 
 fav_foods = folium.FeatureGroup(name = 'Favorite Eateries')
 
-fav_foods.add_child(folium.Marker(
-    location = [44.95286, -93.28779],
-    popup = 'Milkjam Creamery',
-    icon = folium.Icon(color = 'purple')))
+for lt, ln, name, rate, url in zip(fav_lat, fav_lon, name, rating, website):
+    fav_foods.add_child(folium.Marker(
+        location = [lt, ln],
+        popup = folium.Popup(f'<a href = "{url}">{name}</a> Rating: {rate}'),
+        icon = folium.Icon(color = 'purple')))
 
 map.add_child(fav_foods)
 
